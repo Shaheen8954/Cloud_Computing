@@ -1,25 +1,12 @@
-
-
-
-This is a copy of a shared ChatGPT conversation
-
-Report conversation
-Task 1: Create a Pritunl/Open VPN server with which we can log in to private server, server should be ubuntu linux, ip 10.10.0.5, user should be user_<yourname>. Server user should have sudo permissions. I should be able to connect to vpn and then login to private server and ping server  
+## Task 1: Create a Pritunl/Open VPN server with which we can log in to private server, server should be ubuntu linux, ip 10.10.0.5, user should be user_<yourname>. Server user should have sudo permissions. I should be able to connect to vpn and then login to private server and ping server  
   
-Task 2: Create two additional VPC , in other two vpc, create 1 private server each. All three server should be able to ping each other and should be accessible over vpn as well.   
+## Task 2: Create two additional VPC , in other two vpc, create 1 private server each. All three server should be able to ping each other and should be accessible over vpn as well.   
   
   
   
   
 That was my task which I have completed successfully  by transit gateway 
   
-Now I want you to create me a proper documentation which include each n every step nothing should be missing for both tasks  
-  
-So that any beginner can perform the task by following documentation 
-
-That's a great project to document. Since this is a complete AWS networking + VPN deployment, a proper guide will be fairly long (around 30–50 pages with screenshots). A single chat response isn't suitable because it will either be truncated or lose formatting.
-
-I recommend creating it as a professional document with:
 
 Title page
 
