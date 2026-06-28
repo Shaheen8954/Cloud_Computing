@@ -223,6 +223,7 @@ Create TGW
 Attach all VPCs
 
 Update Route Tables
+![example image](https://github.com/Shaheen8954/Cloud_Computing/blob/main/Screenshot%202026-06-26%20144040.png)
 
 Propagation
 
