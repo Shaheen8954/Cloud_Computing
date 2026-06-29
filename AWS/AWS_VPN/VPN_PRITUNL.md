@@ -1,5 +1,14 @@
 # Deploy Pritunl VPN Server for Secure Access to Private EC2
 ## TASK: Task 1: Create a Pritunl/Open VPN server with which we can log in to private server, server should be ubuntu linux, ip 10.10.0.5, user should be user_<yourname>.  Server user should have sudo permissions. I should be able to connect to vpn and then login to private server and ping server
  
-Task 2: Create two additional VPC , in other two vpc, create 1 private server each. All three server should be able to ping each other and should be accessible over vpn as well. 
+## Task 2: Create two additional VPC , in other two vpc, create 1 private server each. All three server should be able to ping each other and should be accessible over vpn as well. 
 
+## Task 1
+Step 1 – Create VPC
+Open AWS Console
+Search VPC
+Click Create VPC
+Select VPC only
+Name: VPN-VPC
+IPv4 CIDR: 10.10.0.0/16
+Create
