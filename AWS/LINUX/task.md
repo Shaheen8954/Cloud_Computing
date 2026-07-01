@@ -15,6 +15,31 @@ VPC
 └── Additional EBS Volume attached to each server
 ```
 
+
+```
+1. Create an EBS Volume
+          ↓
+2. Attach it to an EC2 instance
+          ↓
+3. Verify the disk
+   lsblk
+          ↓
+4. Create a filesystem
+   sudo mkfs.ext4 /dev/nvme1n1
+          ↓
+5. Create a mount point
+   sudo mkdir /data
+          ↓
+6. Mount the disk
+   sudo mount /dev/nvme1n1 /data
+          ↓
+7. Verify
+   df -h
+          ↓
+8. Make the mount persistent
+   Edit /etc/fstab
+```
+
 Both servers should have:
 
 * Ubuntu 24.04
