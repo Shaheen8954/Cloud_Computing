@@ -11,7 +11,7 @@ Associate trasit gateway rtb with all 3 rtb
 
 ### STEP - 2 
 Transit gateway Attachment
-![Transit Gateway RTB](transit-gateway-attachment.pn)
+![Transit Gateway RTB](transit-gateway-attachment.png)
 attachment-1  vpc-1
 attachment-2   vpc-2
 attachment-3   vpc-3
