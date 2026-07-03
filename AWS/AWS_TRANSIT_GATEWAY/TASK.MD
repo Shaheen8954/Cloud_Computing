@@ -2,6 +2,7 @@
 ## TASK: Create two additional VPC , in other two vpc, create 1 private server each. All three server should be able to ping each other and should be accessible over vpn as well. 
 
 ( For this transit gateway task we already have 3 vpcs and in all 3 vpcs we have 4 ec2 servers in vpc-1 we have 2 ec2 1 public ec2 + 1 private ec2, vpc-2 1 private ec2, vpc-3 1 privte ec2
+![Transit Gateway RTB](Screenshot from 2026-06-29 23-58-00.png)
 
 ### STEP - 1
 Create transit gateway
