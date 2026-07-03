@@ -27,6 +27,7 @@ tgw-012799c5a507c522a
 Destination: 0.0.0.0/0
 Target: internet gateway
 igw-04e4d77564a4f95c5
+![Transit Gateway RTB](transit-gateway-rtb.png)
 
 
 vpc-1-private-rtb = add
@@ -51,6 +52,7 @@ Add ALL EC2 SERVER'S SECURITY GROUP INBOUND IN ALL VPC
 
 EC2-1  VPC-1 - VPC-2 + VPC-3 CIDR 
 ALL ICMP - IPV4
+![Transit Gateway RTB](pubic-server-sg.png)
 
 EC2-2  VPC-1 - VPC-2 + VPC-3 CIDR 
 ALL ICMP - IPV4
@@ -68,6 +70,7 @@ vpn-server
 private-server-1
 private-server-2
 private-server-3
+![Transit Gateway RTB](SECURITY-GROUP.png)
 
 associate correct route table with vpc-subnet
 
@@ -75,6 +78,7 @@ associate correct route table with vpc-subnet
 public-subnet-vpc-1
 private-subnet-vpc-1
 private-subnet-vpc-2
+![Transit Gateway RTB](subnets.png)
 private-subnet-vpc-3
 
 
