@@ -6,7 +6,7 @@
 ### STEP - 1
 Create transit gateway
 Create transit gateway rtb
-![Transit Gateway RTB](screenshots/transit-gateway-rtb.png)
+![Transit Gateway RTB](transit-gateway-rtb.png)
 Associate trasit gateway rtb with all 3 rtb
 
 ### STEP - 2 
