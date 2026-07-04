@@ -6,7 +6,7 @@
 
 Think of it as a **"write-ahead log."**
 
-Before the filesystem modifies the actual data on the disk, it first records the intended operation in a special area called the **journal**.
+Journaling is a technique where the filesystem records planned changes in journal before applying them to the actual data.
 
 If the system crashes before the operation is completed, the filesystem uses the journal to recover safely.
 
