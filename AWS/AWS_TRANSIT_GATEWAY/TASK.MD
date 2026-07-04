@@ -34,7 +34,7 @@ vpc-1-private-rtb = add
 Destination: vpc-2 CIDR, vpc-3 CIDR, 
 Target: Transit gateway
 tgw-012799c5a507c522a
-![Transit Gateway RTB](./private-sever-rtb.png)
+![Transit Gateway RTB](https://github.com/Shaheen8954/Cloud_Computing/blob/main/AWS/private-sever-rtb.png)
 
 
 vpc-2-private-rtb = add
