@@ -564,6 +564,24 @@ aws sts get-caller-identity
 ```
 
 ---
+# What Happens If You Don't Create Each SSM VPC Endpoint?
+
+| Endpoint | Purpose | What Happens If It Is Missing? |
+|----------|----------|--------------------------------|
+| **SSM** (`com.amazonaws.<region>.ssm`) | Registers the EC2 instance with AWS Systems Manager and provides access to Systems Manager APIs (Parameter Store, Patch Manager, Inventory, State Manager, Automation, etc.). | The SSM Agent cannot properly register the instance with Systems Manager. The instance will not be manageable through SSM, and most Systems Manager features will not work. |
+| **SSMMessages** (`com.amazonaws.<region>.ssmmessages`) | Provides the secure, real-time communication channel used by **Session Manager**, including interactive shell access and port forwarding. | Session Manager cannot establish a session. Features like interactive terminal access, SSH-over-SSM, and port forwarding will fail. |
+| **EC2Messages** (`com.amazonaws.<region>.ec2messages`) | Delivers commands and task messages between AWS Systems Manager and the SSM Agent (primarily for older agent versions and compatibility scenarios). | **Run Command** and some management operations may fail on SSM Agent versions or AWS Regions that still rely on this endpoint. Newer SSM Agent versions may not require it in all Regions, but creating it ensures maximum compatibility. |
+
+## Summary
+
+- **SSM Endpoint** → Required for **instance registration** and access to Systems Manager APIs.
+- **SSMMessages Endpoint** → Required for **Session Manager** and all real-time communication.
+- **EC2Messages Endpoint** → Required for **command delivery** on older SSM Agent versions and for compatibility across AWS Regions.
+
+> **Best Practice:** When managing private EC2 instances without Internet or NAT Gateway access, create **all three Interface VPC Endpoints** (`ssm`, `ssmmessages`, and `ec2messages`) to ensure all AWS Systems Manager features work reliably.
+
+
+---
 
 # Expected Outcome
 
