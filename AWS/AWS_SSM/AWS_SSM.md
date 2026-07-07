@@ -291,7 +291,7 @@ Create Security Group.
 
 ---
 
-# Step 12: Create VPC Endpoint Security Group
+# Step 12: Create private Security Group
 
 Navigate:
 
@@ -303,7 +303,7 @@ Create:
 
 | Parameter | Value   |
 | --------- | ------- |
-| Name      | vpce-sg |
+| Name      | private-sg |
 | VPC       | ssm-vpc |
 
 Inbound Rule:
