@@ -157,6 +157,20 @@ sudo nano /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
 ```
 
 > **Note:** The JSON configuration content is intentionally omitted in this guide.
+>
+```{
+    "metrics": {
+        "metrics_collected": {
+            "mem": {
+                "measurement": [
+                    "mem_used_percent"
+                ],
+                "metrics_collection_interval": 30
+            }
+        }
+    }
+}
+```
 
 Save the file.
 
