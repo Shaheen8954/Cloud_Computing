@@ -23,3 +23,8 @@ Secondary: 10.0.0.244
 Command	Purpose
 ip addr show ens5	Show all IPs on the network interface
 hostname -I	Display assigned IP addresses
+
+
+### Routable = An IP address that internet routers can recognize and forward traffic to.
+
+
