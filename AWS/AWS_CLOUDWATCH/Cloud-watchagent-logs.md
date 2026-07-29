@@ -1,4 +1,4 @@
-# Monitor Amazon EC2 Logs using Amazon CloudWatch
+# Monitor Amazon EC2 Logs, Log Collection, & Retention Policies using Amazon CloudWatch
 
 ## 📌 Project Overview
 
@@ -584,6 +584,13 @@ CloudWatch Logs charges for:
 - Log Insights queries
 
 Always configure a retention policy to prevent unnecessary storage costs.
+
+### Configure retention policy
+
+- Click on your cloudwatch logs,
+- Click on action
+- Click on edit retention setting
+- Select the time what you want to choose for retention and save.
 
 ---
 
