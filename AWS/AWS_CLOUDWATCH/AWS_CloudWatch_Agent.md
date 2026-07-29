@@ -153,7 +153,7 @@ This is expected until the agent is started.
 Create the CloudWatch Agent configuration file.
 
 ```bash
-sudo nano /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+sudo vim /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
 ```
 
 > **Note:** The JSON configuration content is intentionally omitted in this guide.
