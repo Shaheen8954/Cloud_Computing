@@ -158,25 +158,30 @@ sudo vim /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
 
 > **Note:** The JSON configuration content is intentionally omitted in this guide.
 >
-```{
-    "metrics": {
-        "metrics_collected": {
-            "mem": {
-                "measurement": [
-                    "mem_used_percent"
-                ],
-                "metrics_collection_interval": 30
-            }
-        }
+```
+{
+  "metrics": {
+    "namespace": "CWAgent",
+    "append_dimensions": {
+      "InstanceId": "${aws:InstanceId}"
+    },
+    "metrics_collected": {
+      "mem": {
+        "measurement": [
+          "mem_used_percent"
+        ],
+        "metrics_collection_interval": 30
+      }
     }
+  }
 }
 ```
 
 Save the file.
 
-- Press **Ctrl + O**
+- Press **ESC**
+- Press **:wq**
 - Press **Enter**
-- Press **Ctrl + X**
 
 ---
 
