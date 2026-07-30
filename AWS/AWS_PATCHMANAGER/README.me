@@ -1,0 +1,200 @@
+# Patch Amazon EC2 Instances using AWS Systems Manager Patch Manager
+
+<p align="center">
+  <img src="architecture.png" alt="AWS Systems Manager Patch Manager Architecture" width="900">
+</p>
+
+---
+
+## Project Overview
+
+Keeping operating systems up to date is one of the most important responsibilities of a System Administrator or DevOps Engineer. Security vulnerabilities, bug fixes, and operating system improvements are released frequently by Linux and Windows vendors. Manually logging into every server to install updates becomes difficult, time-consuming, and error-prone as the number of servers grows.
+
+**AWS Systems Manager Patch Manager** solves this problem by allowing administrators to automate the process of scanning, approving, scheduling, and installing operating system patches across Amazon EC2 instances.
+
+This repository documents the complete hands-on implementation of Patch Manager on an Ubuntu EC2 instance. Every configuration, command, troubleshooting step, and explanation is included so that even a beginner can reproduce the same setup.
+
+---
+
+# Project Objectives
+
+The objectives of this project are to:
+
+- Configure AWS Systems Manager Patch Manager
+- Understand Patch Baselines
+- Configure Patch Policies
+- Configure Maintenance Windows
+- Register Managed Instances
+- Execute Patch Operations
+- Verify Patch Compliance
+- Troubleshoot Patch Manager failures
+- Understand the IAM permissions required for Patch Manager
+
+---
+
+# Architecture
+
+```
+                      AWS Systems Manager
+                               │
+                               │
+                       Patch Manager Service
+                               │
+        ┌──────────────────────┴──────────────────────┐
+        │                                             │
+ Patch Baseline                              Maintenance Window
+        │                                             │
+        └──────────────────────┬──────────────────────┘
+                               │
+                       AWS Run Command
+                               │
+                 AWS-RunPatchBaseline Document
+                               │
+                    Managed Amazon EC2 Instance
+                               │
+                   Ubuntu Package Manager (APT)
+                               │
+                  Scan / Install Operating System Updates
+                               │
+                     Patch Compliance & Reporting
+```
+
+A higher resolution version of this architecture is available in:
+
+```
+architecture.png
+```
+
+---
+
+# AWS Services Used
+
+| Service | Purpose |
+|----------|---------|
+| Amazon EC2 | Linux server |
+| AWS Systems Manager | Central management service |
+| Patch Manager | Patch automation |
+| Fleet Manager | Verify managed nodes |
+| Run Command | Execute patch document |
+| Maintenance Windows | Schedule maintenance |
+| IAM | Instance permissions |
+| Amazon S3 | Store Patch Policy configuration |
+| Amazon CloudWatch | Logs and monitoring |
+
+---
+
+# Lab Environment
+
+| Component | Value |
+|-----------|-------|
+| Cloud Provider | AWS |
+| Operating System | Ubuntu 24.04 LTS |
+| Patch Method | AWS Systems Manager |
+| Patch Document | AWS-RunPatchBaseline |
+| Instance Type | Amazon EC2 |
+| Authentication | IAM Role |
+| Package Manager | APT |
+
+---
+
+# Repository Structure
+
+```
+Patch-Amazon-EC2-Instances/
+│
+├── README.md
+├── THEORY.md
+├── HANDS_ON.md
+├── TROUBLESHOOTING.md
+├── INTERVIEW.md
+├── CLEANUP.md
+├── architecture.png
+└── images/
+      01-managed-nodes.png
+      02-patch-manager-dashboard.png
+      03-create-maintenance-window.png
+      04-register-target.png
+      05-register-task.png
+      06-run-command.png
+      07-command-history.png
+      08-command-output.png
+      09-s3-bucket.png
+      10-error-output.png
+```
+
+---
+
+# Prerequisites
+
+Before starting this lab, ensure that:
+
+- Ubuntu EC2 instance is running.
+- AWS Systems Manager Agent (SSM Agent) is installed.
+- EC2 instance has an IAM Role attached.
+- Instance appears as a **Managed Node** in AWS Systems Manager.
+- Internet connectivity (or Systems Manager VPC Endpoints) is available.
+- AWS CLI is configured if command-line verification is required.
+
+---
+
+# Skills You Will Learn
+
+After completing this project, you will understand:
+
+- AWS Systems Manager
+- Managed Nodes
+- Patch Manager
+- Patch Policies
+- Patch Baselines
+- Maintenance Windows
+- Run Command
+- Patch Compliance
+- Fleet Manager
+- IAM permissions for Patch Manager
+- Patch automation best practices
+
+---
+
+# Documentation Guide
+
+This repository is divided into multiple documents.
+
+| File | Description |
+|------|-------------|
+| README.md | Project overview and architecture |
+| THEORY.md | Concepts behind Patch Manager |
+| HANDS_ON.md | Complete step-by-step implementation |
+| TROUBLESHOOTING.md | Real errors encountered and their solutions |
+| INTERVIEW.md | Frequently asked interview questions |
+| CLEANUP.md | Resource cleanup and cost optimization |
+
+---
+
+# Learning Outcomes
+
+By completing this project, you will be able to:
+
+- Configure AWS Patch Manager from scratch.
+- Create and understand Patch Baselines.
+- Configure Maintenance Windows.
+- Register Managed Nodes.
+- Execute patch operations using AWS Systems Manager.
+- Troubleshoot common Patch Manager failures.
+- Understand the relationship between Patch Manager, SSM Agent, IAM, and Amazon S3.
+- Implement automated patch management using AWS best practices.
+
+---
+
+# Next Step
+
+Continue with **THEORY.md** to understand the concepts behind Patch Manager before beginning the hands-on implementation.
+
+```
+THEORY.md
+```
+
+---
+
+# Author
+
+This project is part of my AWS & DevOps hands-on learning journey and demonstrates practical implementation of automated patch management using AWS Systems Manager.
