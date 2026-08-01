@@ -228,6 +228,11 @@ SHOW TABLES;
 DESCRIBE users;
 ```
 
+#### exit from database
+```
+exit
+```
+
 
 # Step 5 - Flask Project
 
