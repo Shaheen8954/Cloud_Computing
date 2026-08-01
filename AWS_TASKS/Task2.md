@@ -317,7 +317,7 @@ Email Address: (optional)
 Open
 
 ```bash
-sudo nano /etc/nginx/sites-available/default
+sudo vim /etc/nginx/sites-available/default
 ```
 
 Replace everything with
