@@ -143,7 +143,7 @@ Expected Output
 ## Create a Production Service
 
 ```bash
-sudo nano /etc/systemd/system/backend.service
+sudo vim /etc/systemd/system/backend.service
 ## Add this 
 [Unit]
 Description=FastAPI Backend
@@ -179,7 +179,7 @@ sudo systemctl start backend
 Edit the default configuration.
 
 ```bash
-sudo nano /etc/nginx/sites-available/default
+sudo vim /etc/nginx/sites-available/default
 ```
 
 Replace everything with
