@@ -144,21 +144,23 @@ Expected Output
 
 ```bash
 sudo vim /etc/systemd/system/backend.service
+```
+
 ## Add this 
+```
 [Unit]
 Description=FastAPI Backend
 After=network.target
 
 [Service]
 User=ubuntu
-WorkingDirectory=/home/ubuntu/backend
-Environment="PATH=/home/ubuntu/backend/venv/bin"
-ExecStart=/home/ubuntu/backend/venv/bin/uvicorn main:app --host 0.0.0.0 --port 3000
+WorkingDirectory=/home/ubuntu
+ExecStart=/home/ubuntu/venv/bin/uvicorn main:app --host 0.0.0.0 --port 3000
 Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-
 
 ```
 ##  Enable the Service
