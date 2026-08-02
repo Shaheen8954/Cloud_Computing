@@ -544,7 +544,7 @@ backup
 Open the file:
 
 ```bash
-sudo nano /backup/mysql_backup.sh
+sudo vim /backup/mysql_backup.sh
 ```
 
 Paste:
