@@ -10,7 +10,6 @@ Configure AWS DataSync to securely transfer data from an S3 bucket in the **Sour
 
 ```
 
-```
                 Source AWS Account                           Destination AWS Account
 +-----------------------------------------+      +--------------------------------------+
 |                                         |      |                                      |
@@ -25,7 +24,7 @@ Configure AWS DataSync to securely transfer data from an S3 bucket in the **Sour
 | IAM Role (BucketAccessRoleArn)          |      | Bucket Policy allows IAM Role        |
 |                                         |      |                                      |
 +-----------------------------------------+      +--------------------------------------+
-```
+
 
 ---
 
