@@ -99,3 +99,47 @@ Then open it with:
 Microsoft Excel
 
 Excel will automatically put the values into columns.
+
+
+## For multipal region
+```
+#!/bin/bash
+
+REGIONS=("eu-west-1" "ap-south-1")
+OUTPUT_FILE="ec2_inventory.csv"
+
+echo "Region,InstanceName,InstanceID,PrivateIP,PublicIP,State,InstanceType,Tags" > "$OUTPUT_FILE"
+
+for REGION in "${REGIONS[@]}"
+do
+    echo "Collecting EC2 inventory from $REGION..."
+
+    aws ec2 describe-instances \
+        --region "$REGION" \
+        --query 'Reservations[].Instances[]' \
+        --output json |
+    jq -r --arg region "$REGION" '
+        .[] |
+        [
+            $region,
+            (
+                [.Tags[]? | select(.Key=="Name") | .Value] |
+                first // "N/A"
+            ),
+            .InstanceId,
+            (.PrivateIpAddress // "N/A"),
+            (.PublicIpAddress // "N/A"),
+            .State.Name,
+            .InstanceType,
+            (
+                [.Tags[]? | "\(.Key)=\(.Value)"] |
+                join("; ")
+            )
+        ] |
+        @csv
+    ' >> "$OUTPUT_FILE"
+done
+
+echo "EC2 inventory generated successfully."
+echo "File: $OUTPUT_FILE"
+```
